@@ -1,0 +1,2 @@
+Routes are like to point which route has to work and all controller files will have 
+the work/callbacks/functions i.e. the tasks to be done at 

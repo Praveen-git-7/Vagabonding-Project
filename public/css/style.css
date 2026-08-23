@@ -1,0 +1,188 @@
+body {
+    font-family: "Plus Jakarta Sans", sans-serif !important;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    flex: 1;
+}
+
+
+.glass-navbar {
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(30px) saturate(180%);
+    -webkit-backdrop-filter: blur(30px) saturate(180%);
+
+    border: 1px solid rgba(255,255,255,0.15);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+}
+
+
+.navbar {
+    height: 5rem;
+    
+}
+
+.fa-clover {
+    color: #fe424d;
+    font-size: 2rem;
+}
+
+.nav-link {
+    color: #222222 !important;
+}
+
+
+/* Footer */
+.f-info-links a {
+    text-decoration: none;
+    color: #222222;
+}
+.f-info-links a:hover {
+    text-decoration: line-through;
+}
+
+
+.f-info-links,
+.f-info-socials,
+.f-info-brand {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.f-info-socials i{
+    font-size: 1.2rem;
+    margin-right: 1rem;
+}
+.f-info {
+    text-align: center;
+    height: 8rem;
+    background-color: #ebebeb;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: space-evenly;
+}
+
+
+
+/* Listing Card */
+.listing-card {
+    border: none !important;
+    margin-bottom: 2rem;
+}
+.card-img-top {
+    border-radius: 1rem !important;
+    width: 100% !important;
+    object-fit: cover !important;
+}
+
+.card-body {
+    padding: 0 !important;
+}
+.card-text p {
+    font-weight: 400 !important;
+}
+
+.listing-link {
+    text-decoration: none ;
+}
+
+
+/* Card Effect */
+.card-img-overlay {
+    opacity: 0;
+}
+.card-img-overlay:hover {
+    opacity: 0.5;
+    background-color: white;
+}
+
+
+/* New Page */
+.add-btn {
+    background-color: #fe424d !important;
+    border: none !important;
+}
+
+
+/* Edit Page */
+.edit-btn {
+    background-color: #fe424d !important;
+    border: none !important;
+}
+
+
+
+/* Show page */
+.show-img {
+    height: 30vh;
+}
+
+.btns {
+    display: flex;
+}
+
+.show-card {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+
+
+
+/* Map */
+#map { 
+    height: 350px; 
+    width: 80vh; 
+}
+/* Map-Marker */
+.custom-marker {
+    width: 30px;
+    height: 30px;
+    background-color: red;
+    border-radius: 50% 50% 50% 0%;
+    transform: rotate(-45deg);
+    border: 3px solid black;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+
+
+/* Attractions */
+.all-attractions {
+    border: solid lightgray 2px;
+    border-radius: 2px;
+    display: grid;
+    /* flex-wrap: wrap;
+    gap: 30%; */
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: space-between;    
+}
+.each-filter {
+    padding: 0rem 2rem;
+}
+
+
+
+/* Highlights in show.ejs */
+.highlights {
+    display: flex;
+    flex-wrap: wrap;
+}
+.each-highlight {
+    border: solid lightgray 1px;
+    border-radius: 5px;
+    padding: 0.25rem 0.5rem;
+    margin: 1px 2px;
+    background-color: #f8f8f8;
+}

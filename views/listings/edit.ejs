@@ -1,0 +1,166 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head> -->
+
+<% layout("/layouts/boilerplate") %>
+
+<!-- <body> -->
+<div class="row mt-3">
+  <div class="col-8 offset-2">
+    <h3>Edit your listing</h3>
+    <hr />
+    <form
+      method="post"
+      action="/listings/<%= listing._id %>?_method=PUT"
+      class="needs-validation"
+      novalidate
+      enctype="multipart/form-data"
+    >
+      <div class="mb-3">
+        <label for="title" class="form-label">Title</label>
+        <input
+          type="text"
+          name="listing[title]"
+          value="<%= listing.title %>"
+          class="form-control"
+          required
+        />
+        <div class="valid-feedback">Title good!</div>
+      </div>
+
+      <div class="mb-3">
+        <label for="text" class="form-label">Text</label>
+        <textarea
+          type="text"
+          name="listing[description]"
+          class="form-control"
+          required
+        > <%= listing.description %> </textarea>
+        <div class="invalid-feedback">Description not looking good!</div>
+      </div>
+
+      <div class="mb-3">
+        Original Listed Image <br>
+        <img src="<%= originalImageUrl %>" alt="Listed Image">
+      </div>
+
+      <div class="mb-3">
+        <label for="image" class="form-label">Upload New Image</label>
+        <input
+          type="file"
+          name="listing[image]"
+          class="form-control"
+        />
+      </div>
+
+      <div class="mb-3">
+        <label for="attractions" class="form-label">Attractions at your destination</label>
+        
+        <div class="all-attractions">
+          <div class="each-filter">
+            <input type="checkbox" id="trending" name="listing[attractions]" value="Trending">
+            <label for="trending">Trending</label>
+          </div>
+          <div class="each-filter">
+            <input type="checkbox" id="bedroom" name="listing[attractions]" value="Bedroom">
+            <label for="bedroom">Bedroom</label>
+          </div>
+          <div class="each-filter">
+            <input type="checkbox" id="iconic-cities" name="listing[attractions]" value="Iconic-Cities">
+            <label for="iconic-cities">Iconic Cities</label>
+          </div>
+          <div class="each-filter">
+            <input type="checkbox" id="mountains" name="listing[attractions]" value="Mountains">
+            <label for="mountains">Mountains</label>
+          </div>
+          <div class="each-filter">
+            <input type="checkbox" id="castles" name="listing[attractions]" value="Castles">
+            <label for="castles">Castles</label>
+          </div>
+          <div class="each-filter">
+            <input type="checkbox" id="amazing-pool" name="listing[attractions]" value="Amazing-Pool">
+            <label for="amazing-pool">Amazing Pool</label>
+          </div>
+          <div class="each-filter">
+            <input type="checkbox" id="camping" name="listing[attractions]" value="Camping">
+            <label for="camping">Camping</label>
+          </div>
+          <div class="each-filter">
+            <input type="checkbox" id="farms" name="listing[attractions]" value="Farms">
+            <label for="farms">Farms</label>
+          </div>
+          <div class="each-filter">
+            <input type="checkbox" id="arctic" name="listing[attractions]" value="Arctic">
+            <label for="arctic">Arctic</label>
+          </div>
+          <div class="each-filter">
+            <input type="checkbox" id="off-roading" name="listing[attractions]" value="Off-Roading">
+            <label for="off-roading">Off-Roading</label>
+          </div>
+          <div class="each-filter">
+            <input type="checkbox" id="domes" name="listing[attractions]" value="Domes">
+            <label for="domes">Domes</label>
+          </div>
+        </div>  
+      </div>
+
+      <div class="row">
+        <div class="mb-3 col-md-4">
+          <label for="price" class="form-label">Price</label>
+          <input
+            type="number"
+            name="listing[price]"
+            value="<%= listing.price %>"
+            class="form-control"
+            required
+          />
+          <div class="invalid-feedback">Is it free?</div>
+        </div>
+
+        <div class="mb-3 col-md-8">
+          <label for="country" class="form-label">Country</label>
+          <input
+            type="text"
+            name="listing[country]"
+            value="<%= listing.country %>"
+            class="form-control"
+            required
+          />
+          <div class="invalid-feedback">Enter valid Country name</div>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="location" class="form-label">Location</label>
+        <input
+          type="text"
+          name="listing[location]"
+          value="<%= listing.location %>"
+          class="form-control"
+          required
+        />
+        <div class="invalid-feedback">Enter valid Location</div>
+      </div>
+
+      <button class="btn btn-dark edit-btn mt-3">Edittttttttt</button>
+    </form>
+  </div>
+</div>
+
+<!-- <script src="/js/script.js"></script>     //Using it in boilerplate -->
+<!-- </body>
+</html> -->
+
+
+
+<script>
+  const allAttractions = <%- JSON.stringify(allAttractions || []) %>;
+
+  for (let feature of allAttractions) {
+    document.getElementById(feature).checked = true;
+  }
+</script>
